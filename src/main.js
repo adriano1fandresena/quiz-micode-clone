@@ -1,3 +1,4 @@
+import confetti from "canvas-confetti";
 import { Questions } from "./question";
 import "./style.css";
 
@@ -42,6 +43,7 @@ function startQuiz(event) {
   }
 
   function displayFinishMessage() {
+    celebrate();
     const h1 = document.createElement("h1");
     h1.innerText = "Bravo ! Tu as terminé le Quiz";
     const p = document.createElement("p");
@@ -49,30 +51,56 @@ function startQuiz(event) {
     app.appendChild(h1);
     app.appendChild(p);
   }
+  function celebrate() {
+    confetti({
+      particleCount: 150,
+      spread: 100,
+      origin: { y: 0.6 },
+    });
+  }
 
   function submit() {
     const selectedAnswer = app.querySelector('input[name="answer"]:checked');
+    const errormessage = app.querySelector(".ifuncheked");
 
-    disableAllAnswers();
+    if (!selectedAnswer) {
+      if (!errormessage) {
+        const showErrorMessage = uncheckedMessage();
+        app.appendChild(showErrorMessage);
+      }
+    } else {
+      if (errormessage) {
+        errormessage.remove();
+      }
+      disableAllAnswers();
 
-    const value = selectedAnswer.value;
+      const value = selectedAnswer.value;
 
-    const question = Questions[currentQuestion];
+      const question = Questions[currentQuestion];
 
-    const isCorrect = question.correct === value;
+      const isCorrect = question.correct === value;
 
-    if (isCorrect) {
-      score++;
+      if (isCorrect) {
+        score++;
+      }
+
+      showFeedback(isCorrect, question.correct, value);
+      displayNextQuestionButton(() => {
+        currentQuestion++;
+        displayQuestion(currentQuestion);
+      });
+
+      const feedback = getFeedbackMessage(isCorrect, question.correct);
+      app.appendChild(feedback);
     }
+  }
 
-    showFeedback(isCorrect, question.correct, value);
-    displayNextQuestionButton(() => {
-      currentQuestion++;
-      displayQuestion(currentQuestion);
-    });
-
-    const feedback = getFeedbackMessage(isCorrect, question.correct);
-    app.appendChild(feedback);
+  function uncheckedMessage() {
+    const message = document.createElement("p");
+    message.innerText = "Veuillez séléctionner d'abord une réponse !";
+    message.className = "ifuncheked";
+    message.id = "ifuncheked";
+    return message;
   }
 
   function createAnswers(answers) {
@@ -185,3 +213,18 @@ function disableAllAnswers() {
     radio.disabled = "true";
   }
 }
+
+function removeErrorMsgOnChecked() {
+  app.addEventListener("change", (event) => {
+    if (event.target.matches('input[name="answer"]')) {
+      const errorMessage = app.querySelector("#ifuncheked");
+
+      if (errorMessage) {
+        errorMessage.remove();
+      }
+    }
+  });
+  return;
+}
+
+removeErrorMsgOnChecked();

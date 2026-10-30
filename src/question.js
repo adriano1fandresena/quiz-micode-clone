@@ -1,58 +1,79 @@
 export const Questions = [
   {
-    question: "Comment déclarer une variable qui ne peut pas être modifiée ?",
-    answers: ["const", "let", "var"],
-    correct: "const",
+    question:
+      "Quelle maille sert généralement de base pour commencer la plupart des ouvrages en ligne ?",
+    answers: ["La maille serrée", "La maille en l'air (chaînette)", "La bride"],
+    correct: "La maille en l'air (chaînette)",
   },
   {
     question:
-      "Quelle méthode transforme une chaîne de caractères en nombre entier ?",
-    answers: ["parseInt", "parseFloat", "toString"],
-    correct: "parseInt",
-  },
-  {
-    question: 'Quel est le résultat de "2" + 2 en JavaScript ?',
-    answers: ["4", '"22"', "22", "Erreur"],
-    correct: '"22"',
-  },
-
-  {
-    question: "Comment appelle-t-on une fonction qui s'appelle elle-même ?",
-    answers: ["Fonction circulaire", "Fonction récursive", "Fonction miroir"],
-    correct: "Fonction récursive",
-  },
-  {
-    question: "Quelle fonction permet de créer un délai en JavaScript ?",
-    answers: ["delay()", "setTimeout()", "wait()"],
-    correct: "setTimeout()",
+      "Que signifie le terme japonais 'Amigurumi' dans l'univers du crochet ?",
+    answers: [
+      "Une technique de teinture de la laine",
+      "Des petites peluches ou animaux rembourrés crochetés",
+      "Un type de crochet géant en bois",
+    ],
+    correct: "Des petites peluches ou animaux rembourrés crochetés",
   },
   {
     question:
-      "Quel est le nom de la fonction qui permet de répéter une action à intervalles réguliers ?",
-    answers: ["setInterval()", "repeat()", "loop()"],
-    correct: "setInterval()",
+      "Quel nœud utilise-t-on pour attacher le fil au crochet avant de faire la première maille ?",
+    answers: ["Le nœud plat", "Le nœud magique", "Le nœud coulant"],
+    correct: "Le nœud coulant",
   },
   {
     question:
-      "Quelle méthode permet de retirer le dernier élément d'un tableau ?",
-    answers: ["shift()", "pop()", "splice()"],
-    correct: "pop()",
-  },
-  {
-    question: "Comment vérifier si une variable est un tableau en JavaScript ?",
-    answers: ["isType()", "typeof", "Array.isArray()"],
-    correct: "Array.isArray()",
-  },
-  {
-    question:
-      'Quelle est la valeur de "null" lorsqu\'elle est convertie en nombre ?',
-    answers: ["0", "1", "undefined", "null"],
-    correct: "0",
+      "Quelle technique magique permet de commencer un projet en rond sans laisser de trou au centre ?",
+    answers: [
+      "Le cercle magique",
+      "La maille coulée double",
+      "La chaînette invisible",
+    ],
+    correct: "Le cercle magique",
   },
   {
     question:
-      'Comment accéder au premier élément d\'un tableau appelé "myArray" ?',
-    answers: ["myArray[1]", "myArray[0]", "myArray.first()", "myArray.one"],
-    correct: "myArray[0]",
+      "Si l'on veut doubler la hauteur d'une maille serrée, quel point doit-on utiliser ?",
+    answers: ["La demi-bride", "La bride", "La maille coulée"],
+    correct: "La bride",
+  },
+  {
+    question:
+      "Quelle maille, la plus plate de toutes, est principalement utilisée pour assembler ou fermer un rang ?",
+    answers: ["La maille coulée", "La maille serrée", "La triple bride"],
+    correct: "La maille coulée",
+  },
+  {
+    question:
+      "Que devez-vous faire pour élargir votre ouvrage au rang suivant ?",
+    answers: ["Une diminution", "Une augmentation", "Un jeté"],
+    correct: "Une augmentation",
+  },
+  {
+    question:
+      "Comment appelle-t-on l'action d'enrouler le fil autour du crochet avant de piquer dans une maille ?",
+    answers: ["Un jeté", "Un tiré", "Un bobinage"],
+    correct: "Un jeté",
+  },
+  {
+    question:
+      "Quelle matière de crochet est particulièrement recommandée pour les débutants car elle ne glisse pas trop ?",
+    answers: [
+      "L'acier poli",
+      "Le plastique transparent",
+      "Le bambou ou le bois",
+    ],
+    correct: "Le bambou ou le bois",
+  },
+  {
+    question:
+      "Que signifie l'action de 'bloquer' un ouvrage de crochet une fois terminé ?",
+    answers: [
+      "Le laver à chaud pour rétrécir les mailles",
+      "Le humidifier et l'épingler aux bonnes dimensions pour lui donner sa forme finale",
+      "Faire un nœud double pour que le fil ne se décolle plus",
+    ],
+    correct:
+      "Le humidifier et l'épingler aux bonnes dimensions pour lui donner sa forme finale",
   },
 ];
